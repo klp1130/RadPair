@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Design Choices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Frontend Framework: React
+React was chosen for its efficiency in building interactive user interfaces and component-based architecture, aligning with the objective of creating a user-friendly and accessible interface.
 
-## Available Scripts
+## Backend Infrastructure: Firebase Functions and Firestore
+Firebase Functions and Firestore are utilized for the backend infrastructure to handle serverless computing and scalable data storage, ensuring efficient handling of backend logic and seamless integration with the frontend.
 
-In the project directory, you can run:
+## Regular Expressions for Macro Processing
+Regular expressions are employed to detect and extract macro phrases from user input text. This approach enhances the accuracy of macro detection and streamlines the processing logic.
 
-### `npm start`
+## GPT-4.0 Integration
+OpenAI's GPT-4.0 API is integrated to process text inputs, identify macros, and retrieve relevant information, enabling advanced natural language processing to accurately identify and process macros within radiology transcripts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Firestore Database Integration
+Firestore is used for storing and retrieving macro data, providing real-time data synchronization and scalable database queries, ensuring efficient management of macro data in the cloud.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Error Handling
+Robust error handling mechanisms are implemented throughout the application to manage scenarios where macros are not found or inputs are invalid, ensuring a smooth user experience and enhancing the application's reliability.
 
-### `npm test`
+## User Interface
+The user interface is designed using React components, with clear input areas for radiology transcripts and display sections for processed results, prioritizing usability and accessibility.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Implementation Details
+### API Key and Data Loading:
+- The OpenAI API key is securely stored and accessed using Firebase Functions.
+- Macro data from the provided CSV file is loaded and parsed using Firebase Functions for efficient processing.
 
-### `npm run build`
+### Trigger Words and Macro Expansion:
+- Trigger words such as "insert" and "input" are identified in user input text, triggering macro expansion when followed by a predefined macro phrase.
+- Regular expressions are utilized for pattern matching to accurately detect trigger words and macros.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### System Message Preparation:
+- A system message is prepared to prompt users to input radiology transcripts, providing information about available macros. 
+- This system message enhances user guidance and facilitates seamless interaction with the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ChatGPT Function Calling and Context Awareness:
+- The application calls the ChatGPT function, providing the current transcript context along with trigger words detected in the input text.
+- This enables the GPT-4.0 model to generate context-aware responses, incorporating the identified trigger words and associated macro phrases.
+- The output from GPT-4.0 is then processed to insert the macro text from the macro phrase following the trigger words, ensuring that the generated output accurately reflects the context and intent of the user's input.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Additional Steps
+- **Build Macro Database:**
+  - Establish a database infrastructure to store macro phrases, their corresponding macro texts, and embeddings.
+  - Develop a data pipeline to populate the macro database with relevant information.
+  - Implement scheduled tasks or event triggers to keep the macro database updated with new macro entries and embeddings.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Due to time constraints, the creation of a comprehensive macro database and integration with a vector database couldn't be completed. However, leveraging the existing embeddings stored in Firestore lays the groundwork for future expansion and optimization of the macro processing system.
