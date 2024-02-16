@@ -1,0 +1,100 @@
+[debug] [2024-02-16T23:13:10.137Z] ----------------------------------------------------------------------
+[debug] [2024-02-16T23:13:10.144Z] Command:       /opt/homebrew/Cellar/node/20.8.0/bin/node /opt/homebrew/bin/firebase deploy --debug
+[debug] [2024-02-16T23:13:10.145Z] CLI Version:   13.2.1
+[debug] [2024-02-16T23:13:10.145Z] Platform:      darwin
+[debug] [2024-02-16T23:13:10.145Z] Node Version:  v20.8.0
+[debug] [2024-02-16T23:13:10.145Z] Time:          Fri Feb 16 2024 16:13:10 GMT-0700 (Mountain Standard Time)
+[debug] [2024-02-16T23:13:10.145Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-16T23:13:10.191Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-16T23:13:10.192Z] > authorizing via signed-in user (keenan.leepeters@gmail.com)
+[debug] [2024-02-16T23:13:10.192Z] [iam] checking project radpair-216f9 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-02-16T23:13:10.193Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/radpair-216f9:testIamPermissions [none]
+[debug] [2024-02-16T23:13:10.193Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/radpair-216f9:testIamPermissions x-goog-quota-user=projects/radpair-216f9
+[debug] [2024-02-16T23:13:10.193Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/radpair-216f9:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-02-16T23:13:10.515Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/radpair-216f9:testIamPermissions 200
+[debug] [2024-02-16T23:13:10.516Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/radpair-216f9:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-02-16T23:13:10.516Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/radpair-216f9/serviceAccounts/radpair-216f9@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-02-16T23:13:10.516Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/radpair-216f9/serviceAccounts/radpair-216f9@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-02-16T23:13:10.762Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/radpair-216f9/serviceAccounts/radpair-216f9@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-02-16T23:13:10.762Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/radpair-216f9/serviceAccounts/radpair-216f9@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-02-16T23:13:10.763Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 [none]
+[debug] [2024-02-16T23:13:10.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 200
+[debug] [2024-02-16T23:13:10.996Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 {"projectId":"radpair-216f9","projectNumber":"961758453641","displayName":"RadPair","name":"projects/radpair-216f9","resources":{"hostingSite":"radpair-216f9","realtimeDatabaseInstance":"radpair-216f9-default-rtdb"},"state":"ACTIVE","etag":"1_92748dc2-f7a8-4e68-bc67-fe7f9655645c"}
+[info] 
+[info] === Deploying to 'radpair-216f9'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-02-16T23:13:10.998Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 [none]
+[debug] [2024-02-16T23:13:11.132Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 200
+[debug] [2024-02-16T23:13:11.132Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9 {"projectId":"radpair-216f9","projectNumber":"961758453641","displayName":"RadPair","name":"projects/radpair-216f9","resources":{"hostingSite":"radpair-216f9","realtimeDatabaseInstance":"radpair-216f9-default-rtdb"},"state":"ACTIVE","etag":"1_92748dc2-f7a8-4e68-bc67-fe7f9655645c"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-02-16T23:13:11.133Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-02-16T23:13:11.133Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/radpair-216f9
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/radpair-216f9
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudbuild.googleapis.com [none]
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudbuild.googleapis.com x-goog-quota-user=projects/radpair-216f9
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/artifactregistry.googleapis.com [none]
+[debug] [2024-02-16T23:13:11.134Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/artifactregistry.googleapis.com x-goog-quota-user=projects/radpair-216f9
+[debug] [2024-02-16T23:13:11.560Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/artifactregistry.googleapis.com 200
+[debug] [2024-02-16T23:13:11.560Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-02-16T23:13:11.670Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/runtimeconfig.googleapis.com 200
+[debug] [2024-02-16T23:13:11.671Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-02-16T23:13:11.673Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudfunctions.googleapis.com 200
+[debug] [2024-02-16T23:13:11.673Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-02-16T23:13:11.802Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudbuild.googleapis.com 200
+[debug] [2024-02-16T23:13:11.802Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/radpair-216f9/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-02-16T23:13:11.802Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9/adminSdkConfig [none]
+[debug] [2024-02-16T23:13:11.942Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9/adminSdkConfig 200
+[debug] [2024-02-16T23:13:11.943Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/radpair-216f9/adminSdkConfig {"projectId":"radpair-216f9","databaseURL":"https://radpair-216f9-default-rtdb.firebaseio.com","storageBucket":"radpair-216f9.appspot.com"}
+[debug] [2024-02-16T23:13:11.943Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs [none]
+[debug] [2024-02-16T23:13:12.533Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs 200
+[debug] [2024-02-16T23:13:12.533Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs {"configs":[{"name":"projects/radpair-216f9/configs/openai"}]}
+[debug] [2024-02-16T23:13:12.534Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables [none]
+[debug] [2024-02-16T23:13:12.723Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables 200
+[debug] [2024-02-16T23:13:12.723Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables {"variables":[{"name":"projects/radpair-216f9/configs/openai/variables/key","updateTime":"2024-02-15T18:15:45.442604598Z"}]}
+[debug] [2024-02-16T23:13:12.723Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables/key [none]
+[debug] [2024-02-16T23:13:12.877Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables/key 200
+[debug] [2024-02-16T23:13:12.877Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/radpair-216f9/configs/openai/variables/key {"name":"projects/radpair-216f9/configs/openai/variables/key","updateTime":"2024-02-15T18:15:45.442604598Z","text":"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"}
+[debug] [2024-02-16T23:13:12.879Z] Validating nodejs source
+[debug] [2024-02-16T23:13:13.532Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.3",
+    "csv-parser": "^3.0.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^4.7.0",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2024-02-16T23:13:13.532Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-02-16T23:13:13.539Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-02-16T23:13:13.550Z] Found firebase-functions binary at '/Users/keenanlee-peters/rad-pair/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8640
+
+[debug] [2024-02-16T23:13:14.227Z] Got response from /__/functions.yaml {"endpoints":{"uploadCSVToFirestore":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"uploadCSVToFirestore"},"getMacroExpansion":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"getMacroExpansion"},"processAndStoreMacros":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":540,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"processAndStoreMacros"}},"specVersion":"v1alpha1","requiredAPIs":[]}
